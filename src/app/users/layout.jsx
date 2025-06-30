@@ -76,7 +76,7 @@ export default function UserLayout({ children }) {
 
           <Link href="/" className="flex items-center">
             <span className="text-2xl font-bold text-yellow-500">
-              Bus Broker
+              PASS.UA
             </span>
           </Link>
           <div className="ml-auto flex items-center space-x-4">

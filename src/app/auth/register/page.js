@@ -158,7 +158,7 @@ export default function RegisterPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-zinc-900 to-transparent"></div>
         </div>
         <div className="relative z-10 text-white max-w-xl">
-          <h1 className="text-4xl font-bold mb-4">Welcome to {siteName || 'Bus Broker'}</h1>
+          <h1 className="text-4xl font-bold mb-4">Вітаємо Вас на {siteName || 'PASS.UA'}</h1>
           <p className="text-lg text-gray-300">Join us for a seamless bus booking experience</p>
         </div>
       </div>

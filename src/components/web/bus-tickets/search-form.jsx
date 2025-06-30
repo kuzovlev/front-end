@@ -121,9 +121,9 @@ export default function SearchForm({
   const FormContent = () => (
     <div className={cn("space-y-6", className)}>
       <div className="space-y-2">
-        <h2 className="text-2xl font-semibold text-white">Book Your Trip</h2>
+        <h2 className="text-2xl font-semibold text-white">Забронюйте поїздку</h2>
         <p className="text-sm text-gray-300">
-          Find the perfect bus for your journey
+          Оберіть поїдку, яка потрібна саме Вам
         </p>
       </div>
 
@@ -147,16 +147,16 @@ export default function SearchForm({
               isLoadingCities ? "bg-white/5" : "bg-white/10 hover:bg-white/20"
             )}
           >
-            <SelectValue placeholder="Select departure city">
+            <SelectValue placeholder="Оберіть місто відправки">
               {isLoadingCities ? (
                 <div className="flex items-center gap-2">
                   <Loader2 className="h-4 w-4 animate-spin" />
-                  Loading cities...
+                  Завантажуємо міста...
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
-                  {formData.sourceCity || "Select departure city"}
+                  {formData.sourceCity || "Оберіть місто відправки"}
                 </div>
               )}
             </SelectValue>
@@ -195,7 +195,7 @@ export default function SearchForm({
                 : "bg-white/10 hover:bg-white/20"
             )}
           >
-            <SelectValue placeholder="Select destination city">
+            <SelectValue placeholder="Оберіть місто призначення">
               {isLoadingCities ? (
                 <div className="flex items-center gap-2">
                   <Loader2 className="h-4 w-4 animate-spin" />
@@ -209,7 +209,7 @@ export default function SearchForm({
               ) : (
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
-                  {formData.destinationCity || "Select destination city"}
+                  {formData.destinationCity || "Оберіть місто призначення"}
                 </div>
               )}
             </SelectValue>

@@ -233,7 +233,7 @@ export default function LoginPage() {
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <Link href="/" className="flex items-center justify-center gap-2 mb-8">
             <span className="text-2xl font-bold text-yellow-500">
-              {siteName || 'Bus Broker'}
+              {siteName || 'PASS.UA'}
             </span>
           </Link>
 
@@ -413,7 +413,7 @@ export default function LoginPage() {
           </Tabs>
 
           <p className="mt-6 text-center text-sm text-gray-400">
-            New to {siteName || 'Bus Broker'}?{' '}
+            New to {siteName || 'PASS.UA'}?{' '}
             <Link href="/auth/register" className="text-yellow-500 hover:text-yellow-400 font-medium">
               Create an account
             </Link>
