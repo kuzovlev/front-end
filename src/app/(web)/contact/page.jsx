@@ -34,13 +34,13 @@ export default function ContactPage() {
           <ContactInfo />
         </div>
 
-        <div className="mb-16">
-          <ContactMap />
-        </div>
+        {/*<div className="mb-16">*/}
+        {/*  <ContactMap />*/}
+        {/*</div>*/}
 
-        <div className="mb-16">
-          <ContactFaq />
-        </div>
+        {/*<div className="mb-16">*/}
+        {/*  <ContactFaq />*/}
+        {/*</div>*/}
       </div>
     </motion.div>
   );

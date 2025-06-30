@@ -20,10 +20,10 @@ import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  subject: z.string().min(5, "Subject must be at least 5 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  name: z.string().min(2, "Закоротке імʼя"),
+  email: z.string().email("Введіть правильну електронну адресу"),
+  subject: z.string().min(5, "Закоротка тема"),
+  message: z.string().min(10, "Закоротке повідомлення"),
 });
 
 const containerVariants = {
@@ -53,10 +53,10 @@ export default function ContactForm() {
     try {
       // Here you would typically send the form data to your backend
       await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulated API call
-      toast.success("Message sent successfully!");
+      toast.success("Ваше повідмлення відправлене!");
       form.reset();
     } catch (error) {
-      toast.error("Failed to send message. Please try again.");
+      toast.error("Халепа, щось пішло не так. Спробуйте пізніше");
     } finally {
       setIsSubmitting(false);
     }
@@ -76,9 +76,9 @@ export default function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>Імʼя</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your name" {...field} />
+                  <Input placeholder="Ваше імʼя" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -104,9 +104,9 @@ export default function ContactForm() {
             name="subject"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Subject</FormLabel>
+                <FormLabel>Тема</FormLabel>
                 <FormControl>
-                  <Input placeholder="What is this about?" {...field} />
+                  <Input placeholder="Хочете чимось поділитись із нами?" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -115,13 +115,13 @@ export default function ContactForm() {
 
           <FormField
             control={form.control}
-            name="message"
+            name="Повідомлення"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Your message here..."
+                    placeholder="Ваше повідомлення..."
                     className="min-h-[120px]"
                     {...field}
                   />
@@ -139,10 +139,10 @@ export default function ContactForm() {
             {isSubmitting ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Sending...
+                Відправка...
               </>
             ) : (
-              "Send Message"
+              "Надіслати"
             )}
           </Button>
         </form>

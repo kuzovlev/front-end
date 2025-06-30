@@ -34,7 +34,7 @@ export default function PasswordChange() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.newPassword !== formData.confirmPassword) {
-      toast.error("New passwords do not match");
+      toast.error("Нові паролі не співпадають");
       return;
     }
 
@@ -45,14 +45,14 @@ export default function PasswordChange() {
         newPassword: formData.newPassword,
       });
 
-      toast.success("Password changed successfully");
+      toast.success("Пароль змінено");
       setFormData({
         currentPassword: "",
         newPassword: "",
         confirmPassword: "",
       });
     } catch (error) {
-      toast.error(error.response?.data?.message || "Failed to change password");
+      toast.error(error.response?.data?.message || "Помилка");
     } finally {
       setIsLoading(false);
     }
@@ -63,7 +63,7 @@ export default function PasswordChange() {
       <CardContent className="p-6">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="currentPassword">Current Password</Label>
+            <Label htmlFor="currentPassword">Поточний пароль</Label>
             <div className="relative">
               <Input
                 id="currentPassword"
@@ -90,7 +90,7 @@ export default function PasswordChange() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="newPassword">New Password</Label>
+            <Label htmlFor="newPassword">Новий пароль</Label>
             <div className="relative">
               <Input
                 id="newPassword"
@@ -117,7 +117,7 @@ export default function PasswordChange() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="confirmPassword">Confirm New Password</Label>
+            <Label htmlFor="confirmPassword">Підтвердіть новий пароль</Label>
             <div className="relative">
               <Input
                 id="confirmPassword"
@@ -150,7 +150,7 @@ export default function PasswordChange() {
               disabled={isLoading}
             >
               {isLoading && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
-              Change Password
+              Змінити пароль
             </Button>
           </div>
         </form>

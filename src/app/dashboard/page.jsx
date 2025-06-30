@@ -91,11 +91,10 @@ export default function DashboardPage() {
       >
         <div>
           <h2 className="text-3xl font-bold tracking-tight">
-            Welcome back, {user?.firstName}!
+            З поверненням, {user?.firstName}!
           </h2>
           <p className="text-muted-foreground">
-            Here's what's happening with your {user?.role.toLowerCase()}{" "}
-            account.
+            Ось іфнормація по Вашому {user?.role.toLowerCase()}{" "} обліковому запису.
           </p>
         </div>
       </motion.div>
@@ -109,19 +108,19 @@ export default function DashboardPage() {
       >
         {/* Common Stats for all roles */}
         <StatsCard
-          title="Total Bookings"
+          title="Всього поїхдок"
           value={stats?.totalBookings || 0}
           icon={Calendar}
-          description="All time bookings"
+          description="за весь час"
           delay={0.1}
         />
-        <StatsCard
-          title="Total Revenue"
-          value={`$${stats?.totalRevenue || 0}`}
-          icon={DollarSign}
-          description="Total earnings"
-          delay={0.2}
-        />
+        {/*<StatsCard*/}
+        {/*  title="Total Revenue"*/}
+        {/*  value={`$${stats?.totalRevenue || 0}`}*/}
+        {/*  icon={DollarSign}*/}
+        {/*  description="Total earnings"*/}
+        {/*  delay={0.2}*/}
+        {/*/>*/}
 
         {/* Admin-specific Stats */}
         {user?.role === "ADMIN" && (
@@ -181,8 +180,8 @@ export default function DashboardPage() {
         {user?.role === "USER" && (
           <>
             <StatsCard
-              title="Account Status"
-              value="Active"
+              title="Статус облікового запису"
+              value="Активний"
               icon={User}
               description={`Since ${format(
                 new Date(user?.createdAt),

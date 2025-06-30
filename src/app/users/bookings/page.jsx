@@ -56,7 +56,7 @@ export default function BookingsPage() {
   useEffect(() => {
     const paymentStatus = searchParams.get("redirect_status");
     if (paymentStatus === "succeeded") {
-      toast.success("Payment successful! Your booking has been confirmed.");
+      toast.success("Оплата успішна! Ваше бронювання підтверджене.");
     }
 
     const fetchBookings = async () => {
@@ -67,7 +67,7 @@ export default function BookingsPage() {
       } catch (error) {
         console.error("Error fetching bookings:", error);
         toast.error(
-          error.response?.data?.message || "Failed to fetch bookings"
+          error.response?.data?.message || "Не вдалось завантажити бронювання"
         );
         setBookings([]);
       } finally {
@@ -136,16 +136,15 @@ export default function BookingsPage() {
         className="flex-1 space-y-4 p-4 md:p-8 pt-6"
       >
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-bold tracking-tight">My Bookings</h2>
+          <h2 className="text-3xl font-bold tracking-tight">Мої бронювання</h2>
         </div>
         <Card>
           <CardContent className="flex flex-col items-center justify-center py-16 text-center space-y-4">
             <Bus className="h-12 w-12 text-yellow-500" />
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold">No Bookings Found</h3>
+              <h3 className="text-xl font-semibold">Бронювань не знайдено</h3>
               <p className="text-muted-foreground max-w-sm">
-                You haven't made any bookings yet. Start your journey by booking
-                a bus ticket!
+                У Вас ще немає заброньованих поїздок.
               </p>
             </div>
           </CardContent>

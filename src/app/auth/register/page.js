@@ -18,21 +18,21 @@ import 'react-phone-number-input/style.css';
 
 // Zod validation schema
 const registerSchema = z.object({
-  firstName: z.string().min(2, 'First name must be at least 2 characters').trim(),
-  lastName: z.string().min(2, 'Last name must be at least 2 characters').trim(),
-  email: z.string().email('Invalid email address').trim().toLowerCase(),
+  firstName: z.string().min(2, 'Мінімум 2 символи').trim(),
+  lastName: z.string().min(2, 'Мінімум 2 символи').trim(),
+  email: z.string().email('Неправильна адреса ел.пошти').trim().toLowerCase(),
   mobile: z.string()
-    .min(1, 'Mobile number is required')
+    .min(1, 'Введіть номер телефона')
     .refine((value) => {
       return value && value.length > 0;
-    }, 'Mobile number is required'),
-  gender: z.enum(['MALE', 'FEMALE', 'OTHER'], {
-    required_error: 'Please select a gender',
+    }, 'Введіть номер телефона'),
+  gender: z.enum(['MALE', 'FEMALE'], {
+    required_error: 'Оберіть стать',
   }),
-  password: z.string().min(6, 'Password must be at least 6 characters'),
+  password: z.string().min(6, 'Пароль має складатись мінімум з 6 символів'),
   confirmPassword: z.string(),
 }).refine((data) => data.password === data.confirmPassword, {
-  message: "Passwords don't match",
+  message: "Паролі не співпадають",
   path: ["confirmPassword"],
 });
 
@@ -62,7 +62,7 @@ export default function RegisterPage() {
         if (value !== formData.password) {
           setErrors(prev => ({
             ...prev,
-            confirmPassword: "Passwords don't match"
+            confirmPassword: "Паролі не співпадають"
           }));
           return;
         }
@@ -105,7 +105,7 @@ export default function RegisterPage() {
     setFormData(prev => ({ ...prev, mobile: value || '' }));
     
     if (!value) {
-      setErrors(prev => ({ ...prev, mobile: 'Mobile number is required' }));
+      setErrors(prev => ({ ...prev, mobile: 'Введіть номер телефона' }));
       return;
     }
 
@@ -124,7 +124,7 @@ export default function RegisterPage() {
       
       // Attempt registration
       await register(registrationData);
-      toast.success('Account created successfully!');
+      toast.success('Обліковий запис створено!');
       router.push('/admin/dashboard');
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -138,8 +138,8 @@ export default function RegisterPage() {
           toast.error(err.message);
         });
       } else {
-        console.error('Registration failed:', error);
-        toast.error(error.response?.data?.message || 'Registration failed. Please try again.');
+        console.error('Не вдалось зареєструватись:', error);
+        toast.error(error.response?.data?.message || 'Щось пішло не так. Спробуйте ще раз.');
       }
     }
   };
@@ -159,7 +159,7 @@ export default function RegisterPage() {
         </div>
         <div className="relative z-10 text-white max-w-xl">
           <h1 className="text-4xl font-bold mb-4">Вітаємо Вас на {siteName || 'PASS.UA'}</h1>
-          <p className="text-lg text-gray-300">Join us for a seamless bus booking experience</p>
+          <p className="text-lg text-gray-300">Зареєструйтесь і бронюйте поїдки вже зараз!</p>
         </div>
       </div>
 
@@ -171,9 +171,9 @@ export default function RegisterPage() {
               {siteName || 'Bus Broker'}
             </span>
           </Link>
-          <h2 className="text-2xl font-semibold text-white">Create your account</h2>
+          <h2 className="text-2xl font-semibold text-white">Створити обліковий запис</h2>
           <p className="mt-2 text-sm text-gray-400">
-            Join us for a seamless bus booking experience
+            Зареєструйтесь і бронюйте поїдки вже зараз!
           </p>
         </div>
 
@@ -182,7 +182,7 @@ export default function RegisterPage() {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label htmlFor="firstName" className="block text-sm font-medium text-gray-300">
-                  First Name
+                  Імʼя
                 </label>
                 <Input
                   id="firstName"
@@ -202,7 +202,7 @@ export default function RegisterPage() {
               </div>
               <div>
                 <label htmlFor="lastName" className="block text-sm font-medium text-gray-300">
-                  Last Name
+                  Прізвище
                 </label>
                 <Input
                   id="lastName"
@@ -224,7 +224,7 @@ export default function RegisterPage() {
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-300">
-                Email Address
+                Електронна пошта
               </label>
               <Input
                 id="email"
@@ -245,12 +245,12 @@ export default function RegisterPage() {
 
             <div>
               <label htmlFor="mobile" className="block text-sm font-medium text-gray-300">
-                Mobile Number
+                Телефон
               </label>
               <div className="mt-1">
                 <PhoneInput
                   international
-                  defaultCountry="BD"
+                  defaultCountry="UA"
                   value={formData.mobile}
                   onChange={handleMobileChange}
                   className={`w-full rounded-md ${errors.mobile ? 'border-red-500' : ''}`}
@@ -263,7 +263,7 @@ export default function RegisterPage() {
 
             <div>
               <label htmlFor="gender" className="block text-sm font-medium text-gray-300 mb-2">
-                Gender
+                Стать
               </label>
               <RadioGroup
                 value={formData.gender}
@@ -273,16 +273,16 @@ export default function RegisterPage() {
               >
                 <div className="flex items-center space-x-2 rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-2 hover:bg-zinc-900/80 transition-colors">
                   <RadioGroupItem value="MALE" id="male" className="text-yellow-500" />
-                  <Label htmlFor="male" className="text-gray-300 cursor-pointer">Male</Label>
+                  <Label htmlFor="male" className="text-gray-300 cursor-pointer">Чол.</Label>
                 </div>
                 <div className="flex items-center space-x-2 rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-2 hover:bg-zinc-900/80 transition-colors">
                   <RadioGroupItem value="FEMALE" id="female" className="text-yellow-500" />
-                  <Label htmlFor="female" className="text-gray-300 cursor-pointer">Female</Label>
+                  <Label htmlFor="female" className="text-gray-300 cursor-pointer">Жін.</Label>
                 </div>
-                <div className="flex items-center space-x-2 rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-2 hover:bg-zinc-900/80 transition-colors">
-                  <RadioGroupItem value="OTHER" id="other" className="text-yellow-500" />
-                  <Label htmlFor="other" className="text-gray-300 cursor-pointer">Other</Label>
-                </div>
+                {/*<div className="flex items-center space-x-2 rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-2 hover:bg-zinc-900/80 transition-colors">*/}
+                {/*  <RadioGroupItem value="OTHER" id="other" className="text-yellow-500" />*/}
+                {/*  <Label htmlFor="other" className="text-gray-300 cursor-pointer">Other</Label>*/}
+                {/*</div>*/}
               </RadioGroup>
               {errors.gender && (
                 <p className="mt-1 text-sm text-red-500">{errors.gender}</p>
@@ -291,7 +291,7 @@ export default function RegisterPage() {
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-300">
-                Password
+                Пароль
               </label>
               <div className="relative mt-1">
                 <Input
@@ -325,7 +325,7 @@ export default function RegisterPage() {
 
             <div>
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-300">
-                Confirm Password
+                Підтверджвення пароля
               </label>
               <div className="relative mt-1">
                 <Input
@@ -362,13 +362,13 @@ export default function RegisterPage() {
               className="w-full bg-yellow-500 hover:bg-yellow-600 text-zinc-900 font-semibold"
               disabled={isLoading}
             >
-              {isLoading ? 'Creating Account...' : 'Create Account'}
+              {isLoading ? 'Створюємо обліковий запис...' : 'Зареєструватись'}
             </Button>
 
             <p className="text-center text-sm text-gray-400">
-              Already have an account?{' '}
+              Вже зареєстровані?{' '}
               <Link href="/auth/login" className="text-yellow-500 hover:text-yellow-400 font-medium">
-                Sign in
+                Авторизуйтесь
               </Link>
             </p>
           </form>

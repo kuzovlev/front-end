@@ -91,12 +91,12 @@ export default function DashboardPage() {
       >
         <div>
           <h2 className="text-3xl font-bold tracking-tight">
-            Welcome back, {user?.firstName}!
+            З поверненням, {user?.firstName}!
           </h2>
-          <p className="text-muted-foreground">
-            Here's what's happening with your {user?.role.toLowerCase()}{" "}
-            account.
-          </p>
+          {/*<p className="text-muted-foreground">*/}
+          {/*  Here's what's happening with your {user?.role.toLowerCase()}{" "}*/}
+          {/*  account.*/}
+          {/*</p>*/}
         </div>
       </motion.div>
 
@@ -109,19 +109,19 @@ export default function DashboardPage() {
       >
         {/* Common Stats for all roles */}
         <StatsCard
-          title="Total Bookings"
+          title="Всього бронювань"
           value={stats?.totalBookings || 0}
           icon={Calendar}
-          description="All time bookings"
+          description="за весь час"
           delay={0.1}
         />
-        <StatsCard
-          title="Total Revenue"
-          value={`$${stats?.totalRevenue || 0}`}
-          icon={DollarSign}
-          description="Total earnings"
-          delay={0.2}
-        />
+        {/*<StatsCard*/}
+        {/*  title="Total Revenue"*/}
+        {/*  value={`$${stats?.totalRevenue || 0}`}*/}
+        {/*  icon={DollarSign}*/}
+        {/*  description="Total earnings"*/}
+        {/*  delay={0.2}*/}
+        {/*/>*/}
 
         {/* Admin-specific Stats */}
         {user?.role === "ADMIN" && (
@@ -181,20 +181,20 @@ export default function DashboardPage() {
         {user?.role === "USER" && (
           <>
             <StatsCard
-              title="Account Status"
-              value="Active"
+              title="Статус облікового запису"
+              value="Активний"
               icon={User}
-              description={`Since ${format(
+              description={`З ${format(
                 new Date(user?.createdAt),
                 "MMM dd, yyyy"
               )}`}
               delay={0.3}
             />
             <StatsCard
-              title="Upcoming Trips"
+              title="Майбутні подорожі"
               value={stats?.upcomingTrips || 0}
               icon={Clock}
-              description="Next 30 days"
+              description="в наступний місяць"
               delay={0.4}
             />
           </>
@@ -212,17 +212,17 @@ export default function DashboardPage() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Recent Bookings</CardTitle>
+              <CardTitle>Недавні бронювання</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-center py-10 text-muted-foreground">
-                <p>No bookings found</p>
+                <p>Нічого не знайдено :(</p>
                 {user?.role === "USER" && (
                   <Button
                     className="mt-4 bg-yellow-500 hover:bg-yellow-600"
                     onClick={() => (window.location.href = "/")}
                   >
-                    Book a Trip
+                    Забронбвати поїздку
                   </Button>
                 )}
               </div>

@@ -49,7 +49,7 @@ export default function ProfileUpdate() {
         );
       }
     } catch (error) {
-      toast.error("Failed to load profile");
+      toast.error("Помилка завантаження");
       console.error("Profile fetch error:", error);
     } finally {
       setIsLoading(false);
@@ -104,7 +104,7 @@ export default function ProfileUpdate() {
       });
 
       if (response.data.success) {
-        toast.success("Profile updated successfully");
+        toast.success("Профіль оновлено");
         router.refresh();
 
         // Refresh profile data after successful update
@@ -164,7 +164,7 @@ export default function ProfileUpdate() {
                   variant="outline"
                   onClick={() => document.getElementById("avatar").click()}
                 >
-                  Change Avatar
+                  Змінити фото
                 </Button>
                 {(avatarPreview || profile.avatar) && (
                   <Button
@@ -178,7 +178,7 @@ export default function ProfileUpdate() {
                 )}
               </div>
               <p className="text-sm text-muted-foreground">
-                Recommended: Square image, at least 400x400px
+                Рекомендуємо використовувати квадртані фото розміром мінімум 400x400px
               </p>
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function ProfileUpdate() {
           {/* Name Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="firstName">First Name</Label>
+              <Label htmlFor="firstName">Імʼя</Label>
               <Input
                 id="firstName"
                 name="firstName"
@@ -196,7 +196,7 @@ export default function ProfileUpdate() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="lastName">Last Name</Label>
+              <Label htmlFor="lastName">Прізвище</Label>
               <Input
                 id="lastName"
                 name="lastName"
@@ -210,7 +210,7 @@ export default function ProfileUpdate() {
           {/* Contact Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="mobile">Mobile Number</Label>
+              <Label htmlFor="mobile">Телефон</Label>
               <Input
                 id="mobile"
                 name="mobile"
@@ -220,7 +220,7 @@ export default function ProfileUpdate() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="gender">Gender</Label>
+              <Label htmlFor="gender">Стать</Label>
               <Select
                 value={profile.gender || ""}
                 onValueChange={handleGenderChange}
@@ -231,7 +231,7 @@ export default function ProfileUpdate() {
                 <SelectContent>
                   <SelectItem value="MALE">Male</SelectItem>
                   <SelectItem value="FEMALE">Female</SelectItem>
-                  <SelectItem value="OTHER">Other</SelectItem>
+                  {/*<SelectItem value="OTHER">Other</SelectItem>*/}
                 </SelectContent>
               </Select>
             </div>
@@ -245,7 +245,7 @@ export default function ProfileUpdate() {
               disabled={isSaving}
             >
               {isSaving && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
-              Save Changes
+              Зберегти зміни
             </Button>
           </div>
         </form>

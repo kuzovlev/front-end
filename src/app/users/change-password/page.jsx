@@ -6,8 +6,8 @@ import PasswordChange from "@/components/users/password-change";
 
 export default function ChangePasswordPage() {
   const breadcrumbs = [
-    { label: "Dashboard", href: "/users" },
-    { label: "Change Password" },
+    { label: "Персональний кабінет", href: "/users" },
+    { label: "Змінити пароль" },
   ];
 
   return (
@@ -18,10 +18,10 @@ export default function ChangePasswordPage() {
         <div>
           <BreadcrumbNav items={breadcrumbs} />
           <h2 className="text-2xl font-bold tracking-tight mt-2">
-            Change Password
+              Змінити пароль
           </h2>
           <p className="text-muted-foreground">
-            Update your password to keep your account secure
+            Оновіть пароль для безпеки Вашого облікового запису
           </p>
         </div>
       </div>

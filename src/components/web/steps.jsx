@@ -9,7 +9,7 @@ import { useCustomFields } from "@/hooks/use-custom-fields";
 const defaultSteps = [
   {
     icon: <MapPin className="h-6 w-6 text-yellow-500" />,
-    title: "Choose Destination",
+    title: "Оберіть місце призначення",
     description:
       "Select your departure and arrival locations from our wide network of routes.",
     color: "bg-blue-500",

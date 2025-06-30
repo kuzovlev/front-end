@@ -10,12 +10,12 @@ export default function UserProfilePage() {
 
   return (
     <div className="container mx-auto py-6 max-w-4xl">
-      <h1 className="text-2xl font-semibold mb-6">Profile Settings</h1>
+      <h1 className="text-2xl font-semibold mb-6">Налаштування</h1>
 
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="mb-4">
-          <TabsTrigger value="profile">Profile Information</TabsTrigger>
-          <TabsTrigger value="password">Change Password</TabsTrigger>
+          <TabsTrigger value="profile">Інформація</TabsTrigger>
+          <TabsTrigger value="password">Змінити пароль</TabsTrigger>
         </TabsList>
 
         <TabsContent value="profile">

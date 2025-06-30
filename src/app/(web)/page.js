@@ -23,7 +23,7 @@ export default function HomePage() {
       {/*<SummerTrips />*/}
       <WhyChooseUs />
       {/*<DriversTeam />*/}
-      <Stats />
+      {/*<Stats />*/}
       {/*<Testimonials />*/}
       {/*<Blog />*/}
     </>

@@ -223,8 +223,8 @@ export default function LoginPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-zinc-900 to-transparent"></div>
         </div>
         <div className="relative z-10 text-white max-w-xl">
-          <h1 className="text-4xl font-bold mb-4">Welcome Back!</h1>
-          <p className="text-lg text-gray-300">Sign in to access your account and manage your bookings with ease.</p>
+          <h1 className="text-4xl font-bold mb-4">З поверненням!</h1>
+          <p className="text-lg text-gray-300">Авторизуйтесь для бронювання поїздки</p>
         </div>
       </div>
 
@@ -238,15 +238,15 @@ export default function LoginPage() {
           </Link>
 
           <Tabs defaultValue="email" className="w-full" onValueChange={setActiveTab}>
-            <TabsList className="grid w-full grid-cols-2">
+            <TabsList className="grid w-full grid-cols-1">
               <TabsTrigger value="email" className="flex items-center gap-2">
                 <User className="h-4 w-4" />
-                Login with Email
+                Авторизуйтесь з ел.поштою
               </TabsTrigger>
-              <TabsTrigger value="mobile" className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                Login with Mobile
-              </TabsTrigger>
+              {/*<TabsTrigger value="mobile" className="flex items-center gap-2">*/}
+              {/*  <Phone className="h-4 w-4" />*/}
+              {/*  Login with Mobile*/}
+              {/*</TabsTrigger>*/}
             </TabsList>
 
             {/* Email Login Tab */}
@@ -254,7 +254,7 @@ export default function LoginPage() {
               <form onSubmit={handleEmailSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300">
-                    Email Address
+                    Електронна пошта
                   </label>
                   <Input
                     id="email"
@@ -266,7 +266,7 @@ export default function LoginPage() {
                     className={`mt-1 bg-zinc-800/50 border-zinc-700 text-white ${
                       errors.email ? 'border-red-500' : ''
                     }`}
-                    placeholder="your@email.com"
+                    placeholder="...@email.com"
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-500">{errors.email}</p>
@@ -275,7 +275,7 @@ export default function LoginPage() {
 
                 <div>
                   <label htmlFor="password" className="block text-sm font-medium text-gray-300">
-                    Password
+                    Пароль
                   </label>
                   <div className="relative mt-1">
                     <Input
@@ -312,7 +312,7 @@ export default function LoginPage() {
                     href="/auth/forgot-password"
                     className="text-sm text-yellow-500 hover:text-yellow-400"
                   >
-                    Forgot password?
+                    Забули пароль?
                   </Link>
                 </div>
 
@@ -324,98 +324,98 @@ export default function LoginPage() {
                   {isLoading ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
                   ) : (
-                    'Sign in'
+                    'Авторизуватись'
                   )}
                 </Button>
               </form>
             </TabsContent>
 
             {/* Mobile Login Tab - Updated with PhoneInput */}
-            <TabsContent value="mobile">
-              <form onSubmit={handleMobileSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="mobile" className="block text-sm font-medium text-gray-300">
-                    Mobile Number
-                  </label>
-                  <div className="mt-1">
-                    <PhoneInput
-                      international
-                      defaultCountry="BD"
-                      value={mobileForm.mobile}
-                      onChange={handleMobileChange}
-                      className={`w-full rounded-md ${errors.mobile ? 'border-red-500' : ''}`}
-                      disabled={isOtpSent}
-                    />
-                  </div>
-                  {errors.mobile && (
-                    <p className="mt-1 text-sm text-red-500">{errors.mobile}</p>
-                  )}
-                </div>
+            {/*<TabsContent value="mobile">*/}
+            {/*  <form onSubmit={handleMobileSubmit} className="space-y-6">*/}
+            {/*    <div>*/}
+            {/*      <label htmlFor="mobile" className="block text-sm font-medium text-gray-300">*/}
+            {/*        Mobile Number*/}
+            {/*      </label>*/}
+            {/*      <div className="mt-1">*/}
+            {/*        <PhoneInput*/}
+            {/*          international*/}
+            {/*          defaultCountry="BD"*/}
+            {/*          value={mobileForm.mobile}*/}
+            {/*          onChange={handleMobileChange}*/}
+            {/*          className={`w-full rounded-md ${errors.mobile ? 'border-red-500' : ''}`}*/}
+            {/*          disabled={isOtpSent}*/}
+            {/*        />*/}
+            {/*      </div>*/}
+            {/*      {errors.mobile && (*/}
+            {/*        <p className="mt-1 text-sm text-red-500">{errors.mobile}</p>*/}
+            {/*      )}*/}
+            {/*    </div>*/}
 
-                {/* Styled OTP Input */}
-                {isOtpSent && (
-                  <div>
-                    <label htmlFor="otp" className="block text-sm font-medium text-gray-300">
-                      Enter OTP
-                    </label>
-                    <div className="mt-2 flex gap-2 justify-center">
-                      {[...Array(6)].map((_, index) => (
-                        <Input
-                          key={index}
-                          type="text"
-                          maxLength="1"
-                          value={mobileForm.otp[index] || ''}
-                          onChange={(e) => {
-                            const newOtp = mobileForm.otp.split('');
-                            newOtp[index] = e.target.value;
-                            setMobileForm(prev => ({
-                              ...prev,
-                              otp: newOtp.join('')
-                            }));
-                            // Auto-focus next input
-                            if (e.target.value && index < 5) {
-                              e.target.nextElementSibling?.focus();
-                            }
-                          }}
-                          className="w-12 h-12 text-center text-lg bg-zinc-800/50 border-zinc-700 text-white"
-                          onKeyDown={(e) => {
-                            if (e.key === 'Backspace' && !e.target.value && index > 0) {
-                              e.target.previousElementSibling?.focus();
-                            }
-                          }}
-                        />
-                      ))}
-                    </div>
-                    {errors.otp && (
-                      <p className="mt-1 text-sm text-red-500 text-center">{errors.otp}</p>
-                    )}
-                  </div>
-                )}
+            {/*    /!* Styled OTP Input *!/*/}
+            {/*    {isOtpSent && (*/}
+            {/*      <div>*/}
+            {/*        <label htmlFor="otp" className="block text-sm font-medium text-gray-300">*/}
+            {/*          Enter OTP*/}
+            {/*        </label>*/}
+            {/*        <div className="mt-2 flex gap-2 justify-center">*/}
+            {/*          {[...Array(6)].map((_, index) => (*/}
+            {/*            <Input*/}
+            {/*              key={index}*/}
+            {/*              type="text"*/}
+            {/*              maxLength="1"*/}
+            {/*              value={mobileForm.otp[index] || ''}*/}
+            {/*              onChange={(e) => {*/}
+            {/*                const newOtp = mobileForm.otp.split('');*/}
+            {/*                newOtp[index] = e.target.value;*/}
+            {/*                setMobileForm(prev => ({*/}
+            {/*                  ...prev,*/}
+            {/*                  otp: newOtp.join('')*/}
+            {/*                }));*/}
+            {/*                // Auto-focus next input*/}
+            {/*                if (e.target.value && index < 5) {*/}
+            {/*                  e.target.nextElementSibling?.focus();*/}
+            {/*                }*/}
+            {/*              }}*/}
+            {/*              className="w-12 h-12 text-center text-lg bg-zinc-800/50 border-zinc-700 text-white"*/}
+            {/*              onKeyDown={(e) => {*/}
+            {/*                if (e.key === 'Backspace' && !e.target.value && index > 0) {*/}
+            {/*                  e.target.previousElementSibling?.focus();*/}
+            {/*                }*/}
+            {/*              }}*/}
+            {/*            />*/}
+            {/*          ))}*/}
+            {/*        </div>*/}
+            {/*        {errors.otp && (*/}
+            {/*          <p className="mt-1 text-sm text-red-500 text-center">{errors.otp}</p>*/}
+            {/*        )}*/}
+            {/*      </div>*/}
+            {/*    )}*/}
 
-                <Button
-                  type={isOtpSent ? "submit" : "button"}
-                  onClick={!isOtpSent ? handleSendOTP : undefined}
-                  className="w-full bg-yellow-500 hover:bg-yellow-600 text-zinc-900 font-semibold h-12"
-                  disabled={isLoading || (countdown > 0 && !isOtpSent)}
-                >
-                  {isLoading ? (
-                    <Loader2 className="h-5 w-5 animate-spin" />
-                  ) : isOtpSent ? (
-                    'Verify OTP'
-                  ) : countdown > 0 ? (
-                    `Resend OTP in ${countdown}s`
-                  ) : (
-                    'Send OTP'
-                  )}
-                </Button>
-              </form>
-            </TabsContent>
+            {/*    <Button*/}
+            {/*      type={isOtpSent ? "submit" : "button"}*/}
+            {/*      onClick={!isOtpSent ? handleSendOTP : undefined}*/}
+            {/*      className="w-full bg-yellow-500 hover:bg-yellow-600 text-zinc-900 font-semibold h-12"*/}
+            {/*      disabled={isLoading || (countdown > 0 && !isOtpSent)}*/}
+            {/*    >*/}
+            {/*      {isLoading ? (*/}
+            {/*        <Loader2 className="h-5 w-5 animate-spin" />*/}
+            {/*      ) : isOtpSent ? (*/}
+            {/*        'Verify OTP'*/}
+            {/*      ) : countdown > 0 ? (*/}
+            {/*        `Resend OTP in ${countdown}s`*/}
+            {/*      ) : (*/}
+            {/*        'Send OTP'*/}
+            {/*      )}*/}
+            {/*    </Button>*/}
+            {/*  </form>*/}
+            {/*</TabsContent>*/}
           </Tabs>
 
           <p className="mt-6 text-center text-sm text-gray-400">
-            New to {siteName || 'PASS.UA'}?{' '}
+            Немає облікового запису {siteName || 'PASS.UA'}?{' '}
             <Link href="/auth/register" className="text-yellow-500 hover:text-yellow-400 font-medium">
-              Create an account
+              Створіть його!
             </Link>
           </p>
         </div>

@@ -41,24 +41,24 @@ const itemVariants = {
 const contactInfo = [
   {
     icon: MapPin,
-    title: "Address",
-    content: "123 Business Street, Suite 100, City, State 12345",
+    title: "Адреса",
+    content: "Запоріжжя, вул. Сонячна, 17",
   },
   {
     icon: Phone,
-    title: "Phone",
-    content: "+1 (555) 123-4567",
+    title: "Телефон",
+    content: "+380 (50) 333-2211",
   },
   {
     icon: Mail,
     title: "Email",
-    content: "contact@busbroker.com",
+    content: "kozyriatskiymaks@gmail.com",
   },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    content: "Mon - Fri: 9:00 AM - 6:00 PM",
-  },
+  // {
+  //   icon: Clock,
+  //   title: "Business Hours",
+  //   content: "Mon - Fri: 9:00 AM - 6:00 PM",
+  // },
 ];
 
 const socialLinks = [
@@ -97,31 +97,31 @@ export default function ContactInfo() {
           </motion.div>
         ))}
 
-        <motion.div variants={itemVariants} className="pt-6">
-          <h3 className="text-lg font-semibold text-foreground mb-4">
-            Follow Us
-          </h3>
-          <div className="flex space-x-4">
-            {socialLinks.map((social, index) => (
-              <Button
-                key={index}
-                variant="outline"
-                size="icon"
-                className="hover:bg-yellow-100 hover:text-yellow-600 dark:hover:bg-yellow-900/20 dark:hover:text-yellow-400"
-                asChild
-              >
-                <a
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-5 w-5" />
-                </a>
-              </Button>
-            ))}
-          </div>
-        </motion.div>
+        {/*<motion.div variants={itemVariants} className="pt-6">*/}
+        {/*  <h3 className="text-lg font-semibold text-foreground mb-4">*/}
+        {/*    Follow Us*/}
+        {/*  </h3>*/}
+        {/*  <div className="flex space-x-4">*/}
+        {/*    {socialLinks.map((social, index) => (*/}
+        {/*      <Button*/}
+        {/*        key={index}*/}
+        {/*        variant="outline"*/}
+        {/*        size="icon"*/}
+        {/*        className="hover:bg-yellow-100 hover:text-yellow-600 dark:hover:bg-yellow-900/20 dark:hover:text-yellow-400"*/}
+        {/*        asChild*/}
+        {/*      >*/}
+        {/*        <a*/}
+        {/*          href={social.href}*/}
+        {/*          target="_blank"*/}
+        {/*          rel="noopener noreferrer"*/}
+        {/*          aria-label={social.label}*/}
+        {/*        >*/}
+        {/*          <social.icon className="h-5 w-5" />*/}
+        {/*        </a>*/}
+        {/*      </Button>*/}
+        {/*    ))}*/}
+        {/*  </div>*/}
+        {/*</motion.div>*/}
       </div>
     </motion.div>
   );
