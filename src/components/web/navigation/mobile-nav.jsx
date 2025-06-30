@@ -11,19 +11,19 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 const routes = [
   {
     href: "/",
-    label: "Home",
+    label: "Головна",
   },
   {
     href: "/about",
-    label: "About",
+    label: "Про нас",
   },
   {
     href: "/services",
-    label: "Services",
+    label: "Сервіси",
   },
   {
     href: "/contact",
-    label: "Contact",
+    label: "Контакти",
   },
 ];
 
@@ -112,14 +112,14 @@ export function MobileNav({ isOpen, user, onLogout, onDashboard }) {
                   onClick={onDashboard}
                   className="w-full bg-yellow-500 text-black hover:bg-yellow-600"
                 >
-                  Dashboard
+                  Персональний кабінет
                 </Button>
                 <Button
                   onClick={onLogout}
                   variant="destructive"
                   className="w-full"
                 >
-                  Logout
+                  Вийти
                 </Button>
               </div>
             </div>
@@ -130,7 +130,7 @@ export function MobileNav({ isOpen, user, onLogout, onDashboard }) {
                 asChild
                 className="w-full bg-yellow-500 text-black hover:bg-yellow-600"
               >
-                <Link href="/auth/login">Login</Link>
+                <Link href="/auth/login">Авторизуватись</Link>
               </Button>
             </div>
           )}

@@ -20,12 +20,12 @@ export default function HomePage() {
       <Hero />
       <Features />
       <Steps />
-      <SummerTrips />
+      {/*<SummerTrips />*/}
       <WhyChooseUs />
-      <DriversTeam />
+      {/*<DriversTeam />*/}
       <Stats />
-      <Testimonials />
-      <Blog />
+      {/*<Testimonials />*/}
+      {/*<Blog />*/}
     </>
   )
 }

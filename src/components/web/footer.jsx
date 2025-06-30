@@ -2,22 +2,22 @@ import Link from "next/link";
 
 const footerLinks = {
   quickLinks: [
-    { href: "/about", label: "About Us" },
-    { href: "/services", label: "Services" },
-    { href: "/contact", label: "Contact" },
-    { href: "/privacy", label: "Privacy Policy" },
+    { href: "/about", label: "Про нас" },
+    { href: "/services", label: "Сервіси" },
+    { href: "/contact", label: "Контакти" },
+    // { href: "/privacy", label: "Правила користування" },
   ],
   services: [
-    { href: "/bus-tickets", label: "Bus Tickets" },
-    { href: "/routes", label: "Routes" },
-    { href: "/packages", label: "Travel Packages" },
-    { href: "/offers", label: "Special Offers" },
+    { href: "/bus-tickets", label: "Квитки" },
+    // { href: "/routes", label: "Routes" },
+    // { href: "/packages", label: "Travel Packages" },
+    // { href: "/offers", label: "Special Offers" },
   ],
   contact: [
-    { label: "Email: info@busbroker.com" },
-    { label: "Phone: +1 234 567 890" },
-    { label: "Address: 123 Travel Street" },
-    { label: "City, Country" },
+    { label: "Email: kozyriatskiymaks@gmail.com" },
+    { label: "Телефон: +1 234 567 890" },
+    { label: "Адреса: вул. Сонячна, 17" },
+    { label: "Запоріжжя, Україна" },
   ],
 };
 
@@ -27,15 +27,14 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Bus Broker</h3>
+            <h3 className="text-lg font-semibold">PASS-UA</h3>
             <p className="text-sm text-muted-foreground">
-              Your trusted partner for safe and comfortable bus travel across
-              the country.
+              Ваш надійний перевізник
             </p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Quick Links</h4>
+            <h4 className="text-sm font-semibold">Швидкі посилання</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.href}>
@@ -51,7 +50,7 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Services</h4>
+            <h4 className="text-sm font-semibold">Сервіси</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
@@ -67,7 +66,7 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Contact</h4>
+            <h4 className="text-sm font-semibold">Контакти</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               {footerLinks.contact.map((item, index) => (
                 <li key={index}>{item.label}</li>
@@ -78,7 +77,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
           <p>
-            &copy; {new Date().getFullYear()} Bus Broker. All rights reserved.
+            &copy; {new Date().getFullYear()} Pass-UA.
           </p>
         </div>
       </div>

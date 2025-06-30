@@ -80,17 +80,17 @@ export default function WebLayout({ children }) {
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleDashboardClick}>
-            Dashboard
+            Персональний кабінет
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={logout} className="text-red-600">
-            Logout
+            Вийти
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     ) : (
       <Button asChild className="bg-yellow-500 text-black hover:bg-yellow-600">
-        <Link href="/auth/login">Login</Link>
+        <Link href="/auth/login">Авторизуватись</Link>
       </Button>
     );
   };

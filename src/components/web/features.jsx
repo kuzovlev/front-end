@@ -50,10 +50,10 @@ const itemVariants = {
 export default function Features() {
   const [features, setFeatures] = useState(defaultFeatures);
   const [title, setTitle] = useState(
-    "Follow 3 Steps To Get Your Online Ticket"
+    "Три прості кроки щоб отримати квиток"
   );
   const [subTitle, setSubTitle] = useState(
-    "Book your bus tickets in just a few simple steps. Our easy-to-follow process ensures a smooth booking experience."
+    "Забронюйте квитки лише за кілька простих кроків. Наш зрозумілий процес гарантує безпроблемне бронювання."
   );
   const { getFieldByName } = useCustomFields();
 

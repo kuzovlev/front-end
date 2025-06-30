@@ -7,39 +7,39 @@ import { Shield, Clock, MapPin, Headphones, ThumbsUp, Tag } from "lucide-react";
 const features = [
   {
     icon: <Shield className="h-8 w-8 text-yellow-500" />,
-    title: "Safety First",
+    title: "Безпека понад усе",
     description:
-      "Your safety is our top priority. All our buses are regularly maintained and equipped with modern safety features.",
+      "Ваша безпека — наш головний пріоритет. Усі наші автобуси регулярно проходять технічне обслуговування та оснащені сучасними засобами безпеки.",
   },
   {
     icon: <Clock className="h-8 w-8 text-yellow-500" />,
-    title: "Punctual Service",
+    title: "Завжди вчасно",
     description:
-      "We value your time. Our buses maintain strict schedules to ensure you reach your destination on time.",
+      "Ми цінуємо ваш час. Наші автобуси дотримуються чіткого графіку, щоб ви могли вчасно дістатися до місця призначення.",
   },
   {
     icon: <MapPin className="h-8 w-8 text-yellow-500" />,
-    title: "Wide Network",
+    title: "Маршрути",
     description:
-      "Extensive route network covering all major cities and tourist destinations across the country.",
+      "Розгалужена мережа маршрутів, що охоплює всі великі міста та туристичні напрямки країни.",
   },
   {
     icon: <Headphones className="h-8 w-8 text-yellow-500" />,
-    title: "24/7 Support",
+    title: "Підтримка",
     description:
-      "Our customer support team is always available to assist you with any queries or concerns.",
+      "Ми завжди готові допомогти вам з будь-якими питаннями чи проблемами.",
   },
   {
     icon: <ThumbsUp className="h-8 w-8 text-yellow-500" />,
-    title: "Comfort Guaranteed",
+    title: "Гарантований комфорт",
     description:
-      "Modern buses with comfortable seating, air conditioning, and entertainment systems for a pleasant journey.",
+      "Сучасні автобуси зі зручними сидіннями, кондиціонером та розважальними системами для приємної подорожі.",
   },
   {
     icon: <Tag className="h-8 w-8 text-yellow-500" />,
-    title: "Best Prices",
+    title: "Найкращі ціни",
     description:
-      "Competitive prices with regular discounts and offers to make your travel affordable.",
+      "Конкурентні ціни зроблять вашу подорож доступною.",
   },
 ];
 
@@ -80,15 +80,15 @@ export default function WhyChooseUs() {
               variants={itemVariants}
               className="text-3xl md:text-4xl font-bold text-foreground"
             >
-              Why Choose
-              <span className="text-yellow-500"> Bus Broker</span>
+              Чому обирають
+              <span className="text-yellow-500"> PASS-UA</span>
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-lg text-muted-foreground max-w-2xl mx-auto"
             >
-              We strive to provide the best bus travel experience with our
-              premium services and customer-first approach.
+              Ми прагнемо забезпечити найкращий досвід подорожей автобусом завдяки нашим
+              послугам та клієнтоорієнтованому підходу.
             </motion.p>
           </div>
 

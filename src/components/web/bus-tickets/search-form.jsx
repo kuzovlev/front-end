@@ -5,6 +5,9 @@ import { format } from "date-fns";
 import { CalendarIcon, Loader2, MapPin, Bus, Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
+import {enGB, eo, uk} from 'date-fns/locale';
+const locales = { enGB, eo, uk };
+
 import {
   Select,
   SelectContent,
@@ -234,7 +237,7 @@ export default function SearchForm({
 
       {/* Date Picker */}
       <div className="space-y-2">
-        <label className="text-sm text-gray-300">Journey Date</label>
+        <label className="text-sm text-gray-300">Дата</label>
         <Popover>
           <PopoverTrigger asChild>
             <Button
@@ -246,7 +249,7 @@ export default function SearchForm({
               disabled={isLoadingCities}
             >
               <CalendarIcon className="mr-2 h-4 w-4" />
-              {date ? format(date, "PPP") : <span>Pick a date</span>}
+              {date ? format(date, "PPP", { locale: uk }) : <span>Оберіть дату</span>}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0" align="start">
@@ -254,6 +257,7 @@ export default function SearchForm({
               mode="single"
               selected={date}
               onSelect={setDate}
+              locale={uk}
               initialFocus
               disabled={(date) => date < new Date()}
             />
@@ -286,14 +290,14 @@ export default function SearchForm({
         ) : (
           <div className="flex items-center gap-2">
             <Bus className="h-5 w-5" />
-            {isLoadingCities ? "Loading..." : "Search Available Buses"}
+            {isLoadingCities ? "Завантаження..." : "Знайти доступні поїздки"}
           </div>
         )}
       </Button>
 
       {/* Additional Info */}
       <p className="text-xs text-gray-400 text-center">
-        * All prices include taxes and fees. Terms and conditions apply.
+        * Всі ціни включають збори та податки.
       </p>
     </div>
   );

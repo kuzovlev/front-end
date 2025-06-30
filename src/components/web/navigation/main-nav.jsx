@@ -9,22 +9,22 @@ import { Home, Info, Settings, Phone } from "lucide-react";
 const routes = [
   {
     href: "/",
-    label: "Home",
+    label: "Головна",
     icon: Home,
   },
   {
     href: "/about",
-    label: "About",
+    label: "Про нас",
     icon: Info,
   },
   {
     href: "/services",
-    label: "Services",
+    label: "Сервіси",
     icon: Settings,
   },
   {
     href: "/contact",
-    label: "Contact",
+    label: "Контакти",
     icon: Phone,
   },
 ];
