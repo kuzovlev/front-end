@@ -46,9 +46,9 @@ export default function BusinessOverview() {
   }
 
   const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('uk-UA', {
       style: 'currency',
-      currency: 'USD'
+      currency: 'UAH'
     }).format(amount);
   };
 

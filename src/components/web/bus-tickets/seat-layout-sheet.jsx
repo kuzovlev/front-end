@@ -19,7 +19,7 @@ import { toast } from "sonner";
 import { useSearchParams } from "next/navigation";
 import api from "@/lib/axios";
 
-// Format currency in USD
+// Format currency in UAH
 const formatCurrency = (amount) => {
   return new Intl.NumberFormat("uk-UA", {
     style: "currency",

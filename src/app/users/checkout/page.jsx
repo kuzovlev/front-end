@@ -91,7 +91,7 @@ export default function CheckoutPage() {
         totalAmount: Number(totalAmount),
         discountAmount: 0,
         finalAmount: Number(totalAmount),
-        currency: "usd",
+        currency: "uah",
       };
 
       const response = await api.post("/payments/create-intent", bookingData);
