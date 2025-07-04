@@ -14,9 +14,9 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Bus Broker - Your Safe Travel Journey",
-  description: "Book your bus tickets online with Bus Broker. Safe, comfortable, and reliable bus travel services.",
-  keywords: "bus booking, online bus tickets, bus travel, safe journey, bus broker",
+  title: "PASS-UA Пасажирські перевезення",
+  description: "PASS-UA — це надійні та комфортні пасажирські перевезення по Україні та за кордон. Ми пропонуємо міжміські та міжнародні трансфери, гарантуючи безпеку, пунктуальність і високий рівень обслуговування. Подорожуйте з нами легко — сучасний автопарк, зручне бронювання та професійні водії зроблять вашу поїздку приємною та безтурботною.",
+  keywords: "PASS-UA, пасажирські перевезення, міжміські перевезення, міжнародні перевезення, автобус Україна Європа, надійні перевезення, комфортні поїздки, трансфер Україна, автобусні перевезення, транспортні послуги Україна",
 };
 
 export default function RootLayout({ children }) {
