@@ -42,17 +42,17 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Адреса",
-    content: "Запоріжжя, вул. Сонячна, 17",
+    content: "Запоріжжя, вул. Університетська, 68",
   },
   {
     icon: Phone,
     title: "Телефон",
-    content: "+380 (50) 333-2211",
+    content: "+380 (99) 116 7788",
   },
   {
     icon: Mail,
     title: "Email",
-    content: "kozyriatskiymaks@gmail.com",
+    content: "tickets@pass-ua.com",
   },
   // {
   //   icon: Clock,

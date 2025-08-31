@@ -118,10 +118,10 @@ export default function NotFound() {
 
         <motion.div variants={itemVariants} className="mb-8">
           <h2 className="text-2xl md:text-3xl font-semibold text-zinc-700 dark:text-zinc-300">
-            Oops! You've Gone Off Route
+            Ой! Щось пішло не так
           </h2>
           <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-            Looks like this bus stop doesn't exist on our map.
+            Здається, що сторінка відсутня :(
           </p>
         </motion.div>
 
@@ -164,7 +164,7 @@ export default function NotFound() {
               className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-8 rounded-full"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
+              Назад на головну
             </Button>
           </Link>
         </motion.div>
@@ -175,7 +175,7 @@ export default function NotFound() {
           className="mt-8 inline-flex items-center space-x-2 text-sm text-zinc-500 dark:text-zinc-400"
         >
           <MapPin className="h-4 w-4" />
-          <span>Current Location: Lost in Transit</span>
+          <span>Схоже, що ми загубилсь :(</span>
         </motion.div>
       </motion.div>
     </div>

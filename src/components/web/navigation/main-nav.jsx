@@ -17,11 +17,11 @@ const routes = [
     label: "Про нас",
     icon: Info,
   },
-  {
-    href: "/services",
-    label: "Сервіси",
-    icon: Settings,
-  },
+  // {
+  //   href: "/services",
+  //   label: "Сервіси",
+  //   icon: Settings,
+  // },
   {
     href: "/contact",
     label: "Контакти",

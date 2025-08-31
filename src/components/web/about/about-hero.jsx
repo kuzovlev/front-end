@@ -30,10 +30,10 @@ const textVariants = {
 
 // Default content
 const defaultContent = {
-  title: "About Bus Broker",
-  subtitle: "Your Trusted Travel Partner",
+  title: "Про PASS.UA",
+  subtitle: "Вашого надійного перевізника",
   description:
-    "We're dedicated to revolutionizing bus travel by providing seamless booking experiences and connecting travelers with quality bus services across the nation.",
+    "Подорожуйте легко! Ми робимо автобусні поїздки комфортними та доступними, а бронювання — простим і швидким.",
 };
 
 export default function AboutHero() {

@@ -22,9 +22,9 @@ export default function AboutPage() {
     >
       <AboutHero />
       <Stats />
-      <OurMission />
-      <OurValues />
-      <OurTeam />
+      {/*<OurMission />*/}
+      {/*<OurValues />*/}
+      {/*<OurTeam />*/}
     </motion.div>
   );
 }

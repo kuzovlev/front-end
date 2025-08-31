@@ -8,27 +8,27 @@ import { Users, Bus, MapPin, Award } from "lucide-react";
 const stats = [
   {
     icon: Users,
-    value: "50K+",
-    label: "Happy Customers",
-    description: "Satisfied travelers who trust us",
+    value: "Сотні",
+    label: "Клієнтів",
+    description: "Які нам довіряють",
   },
   {
     icon: Bus,
-    value: "1000+",
-    label: "Bus Partners",
-    description: "Quality bus operators nationwide",
+    value: "Десятки",
+    label: "Автобусів",
+    description: "Належної якості",
   },
   {
     icon: MapPin,
-    value: "100+",
-    label: "Destinations",
-    description: "Routes covering major cities",
+    value: "10+",
+    label: "Зупинок",
+    description: "Знайдіть свій маршрут",
   },
   {
     icon: Award,
     value: "5★",
-    label: "Rating",
-    description: "Average customer satisfaction",
+    label: "Рейтинг",
+    description: "За який не соромно",
   },
 ];
 

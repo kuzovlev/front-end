@@ -14,9 +14,9 @@ const footerLinks = {
     // { href: "/offers", label: "Special Offers" },
   ],
   contact: [
-    { label: "Email: kozyriatskiymaks@gmail.com" },
-    { label: "Телефон: +1 234 567 890" },
-    { label: "Адреса: вул. Сонячна, 17" },
+    { label: "Email: tickets@pass-ua.com" },
+    { label: "Телефон: +38099 116 7788" },
+    { label: "Адреса: вул. Жуковського, 68" },
     { label: "Запоріжжя, Україна" },
   ],
 };
